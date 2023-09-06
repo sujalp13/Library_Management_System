@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+	nav {
+		color: white;
+		padding-top: 25px;
+	}
+</style>
+
+<body>
+	{% block body %}
+	<nav class="navbar navbar-light bg-dark">
+		<!-- {% if user %}
+		<h2>{{ user }}</h2>
+		{% else %}
+		<h2><a href="{{url_for("login")}}"> LOGIN</a> </h2>
+		{% endif %} -->
+	</nav>
+	<div class="col-12 col-md-5 mx-auto form p-4">
+		<table>
+			<tbody>
+				<thead>
+					<td> Isbn_No. </td>
+					<td> Title</td>
+					<td> Author</td>
+					<td> Genre</td>
+				</thead>
+				{%for row in data%}
+				<tr>
+					<td><a href="{{url_for("book_detail", isbn=row[0])}}">{{row[0]}}</a></td>
+					<td>{{row[1]}}</td>
+					<td>{{row[2]}}</td>
+					<td>{{row[3]}}</td>
+				</tr>
+				{%endfor%}
+			</tbody>
+		</table>
+	</div>
+	{% endblock %}
+</body>

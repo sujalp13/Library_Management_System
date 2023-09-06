@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+<body>
+    {% block body %}
+<table border="1">
+<tr>
+    <td><a href="{{url_for("addbook1")}}">add book</a></td>
+    <td><a href="{{url_for("deletebook")}}">deletebook</a></td>
+</tr>
+</table>
+<a href="{{url_for("logout")}}">logout</a>
+{%endblock%}
+</body>
